@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px 10px 0;
+}
+
+.control__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.control__button {
+    padding: 10px;
+    background-color: green;
+    border-radius: 7px;
+    color: #fff;
+}
+
+.table__wrapper {
+    overflow: auto;
+}
+
+.table-cell {
+    width: 30px;
+}
+
+.table-row {
+    display: flex;
+}
