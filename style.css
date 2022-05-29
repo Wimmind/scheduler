@@ -46,7 +46,6 @@ button {
 
 .table__content {
     width: 100%;
-    overflow-x: auto;
 }
 
 .backlog__wrapper {
@@ -113,16 +112,18 @@ td {
 }
 
 .tooltip::after {
-    background: rgba(0, 0, 0, 0.8);
+    background-color: black;
     border-radius: 8px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
     color: #FFF;
     content: attr(data-tooltip);
     bottom: 14px;
+    left: -5px;
     opacity: 0;
     padding: 3px;
     position: absolute;
     visibility: hidden;
+    font-size: 10px;
 }
 
 .tooltip:hover::after {
@@ -166,6 +167,10 @@ td {
 
     .table__wrapper {
         flex-basis: 100%;
+    }
+
+    .table__content {
+        overflow-x: auto;
     }
 }
 
