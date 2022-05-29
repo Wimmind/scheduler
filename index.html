@@ -1,22 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./spinner.css">
     <title>Document</title>
 </head>
+
 <body>
-    <div class="wrapper">
-        <div class="control__wrapper">
-            <button class="control__button">prev</button>
-            <button class="control__button">next</button>
+    <div id="wrapper" class="wrapper hidden">
+        <div class="table__wrapper">
+            <div class="control__content">
+                <button id="prev-week" class="control__button">prev</button>
+                <button id="next-week" class="control__button">next</button>
+            </div>
+            <div class="table__content">
+                <table class="scheduler-table">
+                    <thead>
+                        <tr id="thead-row">
+                            <th>Имя</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="scheduler-table_tbody">
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div id="sheduler-table" class="table__wrapper">
-            
+        <div class="backlog__wrapper">
+            <div class="backlog__title">
+                <h2>Backlog</h2>
+            </div>
+            <div class="backlog__content">
+                <div id="backlog__container" class="backlog__container"></div>
+            </div>
         </div>
+    </div>
+    <div id="spinner__content" class="spinner__content">
+        <div class="spinner"></div>
     </div>
     <script src="./index.js"></script>
 </body>
+
 </html>

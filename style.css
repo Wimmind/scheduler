@@ -5,12 +5,11 @@
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
 }
 
 body {
-    min-height: 100vh;
     background-color: #fff;
+    min-height: 100vh;
 }
 
 button {
@@ -22,12 +21,15 @@ button {
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px 10px 0;
+    display: flex;
 }
 
-.control__wrapper {
+.control__content {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin: 0 0 20px;
+    padding: 0 5px;
 }
 
 .control__button {
@@ -38,13 +40,137 @@ button {
 }
 
 .table__wrapper {
-    overflow: auto;
+    flex-basis: 70%;
+    width: 100%;
 }
 
-.table-cell {
-    width: 30px;
+.table__content {
+    width: 100%;
+    overflow-x: auto;
 }
 
-.table-row {
+.backlog__wrapper {
+    flex-basis: 30%;
+}
+
+.scheduler-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px #656A70 solid;
+    table-layout: fixed;
+}
+
+.scheduler-table thead,
+.scheduler-table td.cell-username {
+    background-color: #F2F2F2;
+    color: #656A70;
+    border: 1px #656A70 solid;
+}
+
+.scheduler-table tr {
+    border-bottom: 1px #656A70 solid;
+}
+
+.scheduler-table th,
+td {
+    text-align: center;
+}
+
+.scheduler-table th {
+    padding: 10px;
+    border: 1px #656A70 solid;
+}
+
+.scheduler-table td {
+    height: 60px;
+}
+
+.scheduler-table td.cell-task_active,
+.scheduler-table td.cell-task {
+    font-size: 14px;
+}
+
+.scheduler-table td.cell-task_active .task {
+    background-color: green;
+    outline: 1px #fff solid;
+    outline-offset: -1px;
+    color: #fff;
+    height: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scheduler-table td.cell-task_active .task-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip::after {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    content: attr(data-tooltip);
+    bottom: 14px;
+    opacity: 0;
+    padding: 3px;
+    position: absolute;
+    visibility: hidden;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.backlog__wrapper {
+    background-color: #F2F2F2;
+}
+
+.backlog__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.backlog__content {
+    padding: 5px;
+}
+
+.backlog__item_wrapper {
+    padding: 5px;
+}
+
+.backlog__item {
+    padding: 10px;
+    background-color: aquamarine;
+    cursor: move;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 1023px) {
+    .backlog__wrapper {
+        display: none;
+    }
+
+    .table__wrapper {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    .scheduler-table {
+        width: 600px;
+    }
 }
